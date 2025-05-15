@@ -5,7 +5,7 @@ const Sidebar = () => {
     <nav className="fixed left-0 top-0 bottom-0 w-64 bg-gray-800 text-white pt-16 overflow-y-auto">
       <ul className="space-y-2 p-4">
         <li>
-          <Link to="/" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
+          <Link to="/home" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
             Home
           </Link>
         </li>

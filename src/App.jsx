@@ -24,7 +24,7 @@ function App() {
             <Route path="/stattriangle" element={<StatTriangle />} />
             <Route path="/statnum" element={<SQLRemportation />} />
             {/* Route par défaut */}
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<LoginForm />} />
           </Routes>
         </div>
   );
