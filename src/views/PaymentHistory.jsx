@@ -1,6 +1,7 @@
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
+
 const PaymentHistory = () => {
   const paymentsData = [
     { code: "---", amount: "800,000 GNF", commission: "20,000 GNF", type: "achat", docType: "Mutation de propriété", chassis: "SB1KZ28E0BG5S9A4", status: "Success", date: "17-03-2025", vignette: "---", category: "---" },
