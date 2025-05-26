@@ -1,57 +1,47 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import {useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const LoginForm = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+export default function LoginPage() {
   const navigate = useNavigate();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Ajoutez ici votre logique d'authentification
-    navigate('/home'); // Redirection après connexion
+  const handleLogin = () => {
+    // Logic for handling login can be added here
+    navigate('/dashboard'); // Redirect to dashboard after login
   };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-sm">
-        <h2 className="text-2xl font-bold text-center mb-6">VPC-Guinée</h2>
-        
-        <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Username</label>
-            <input
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-            />
-          </div>
-          
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-blue-500"
-            />
-          </div>
-          
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
-          >
-            Connexion
-          </button>
-        </form>
+    <div className="min-h-screen flex">
+      {/* Left Logo Section */}
+      <div className="w-1/5 bg-[#0c2745] flex items-start justify-center p-4">
+        <img src="/logo.png" alt="Logo CR DIGITAL" className="w-32 h-auto mt-4" />
+      </div>
 
-        <div className="mt-6 text-center text-sm text-gray-500">
-          <p>© Direction de l'Agriculture & Documentation</p>
+      {/* Right Form Section */}
+      <div className="w-4/5 bg-white flex flex-col items-center justify-center relative">
+        <div className="absolute top-0 w-full h-24 bg-[#d7e7f7] border-b-[2px] border-[#4a1e00]" />
+
+        <div className="z-10 w-full max-w-md px-4">
+          <input
+            type="text"
+            placeholder="Nom d'utilisateur"
+            className="w-full p-4 mt-24 rounded shadow-md outline-none border border-gray-200 mb-4"
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            className="w-full p-4 rounded shadow-md outline-none border border-gray-200"
+          />
+          <button 
+            onClick={handleLogin}
+          className="mt-6 w-full bg-[#172e5c] text-white py-4 rounded shadow-md text-lg font-semibold">
+            Se connecter
+          </button>
+          <p className="text-right text-sm mt-4 mr-1 text-black font-medium">Mot de passe oublié;</p>
         </div>
+
+        <footer className="absolute bottom-2 text-center text-xs w-full text-black">
+          Copyright © 2025, CR Digital Sarl. | For internal distribution only
+        </footer>
       </div>
     </div>
   );
-};
-
-export default LoginForm;
+}

@@ -1,46 +1,79 @@
-import { Link } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const handleNavDashboard = () => {
+    // Logic for handling login can be added here
+    navigate('/dashboard'); // Redirect to dashboard after login
+  };
+  const handleNavTransactions = () => {
+    // Logic for handling login can be added here
+    navigate('/transactions'); // Redirect to transactions after login
+  };
+  const handleNavReversement = () => {
+    // Logic for handling login can be added here
+    navigate('/financial-stats'); // Redirect to reversement after login
+  };
+  const handleNavSettings = () => {
+    // Logic for handling login can be added here
+    navigate('/settings'); // Redirect to settings after login
+  };
   return (
-    <nav className="fixed left-0 top-0 bottom-0 w-64 bg-gray-800 text-white pt-16 overflow-y-auto">
-      <ul className="space-y-2 p-4">
-        <li>
-          <Link to="/home" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link to="/payments" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
-            Paiements
-          </Link>
-        </li>
-        <li>
-          <Link to="/statistics" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
-            Statistique
-          </Link>
-        </li>
-        <li>
-          <Link to="/payments-tools" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
-            Paiement Outils
-          </Link>
-        </li>
-        <li>
-          <Link to="/stattriangle" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
-            Stat. Triangle
-          </Link>
-        </li>
-        <li>
-          <Link to="/statnum" className="block px-4 py-2 rounded hover:bg-gray-700 transition">
-            Stat. Num Portière
-          </Link>
-        </li>
-      </ul>
-      
-      <div className="absolute bottom-0 left-0 right-0 p-4 text-xs text-gray-400 border-t border-gray-700">
-        <p>VPC-Guinée</p>
-        <p className="truncate">https://example.ecsall-guinee.com/item@example.exampleinterva/</p>
+      <div className="w-64 bg-[#0A2342] text-white flex flex-col justify-between">
+        {/* Sidebar */}
+        <div>
+          <div className="p-6">
+            <img src="/logo.png" alt="Logo" className="h-12" />
+          </div>
+          <nav className="flex flex-col space-y-4 px-4">
+
+            <NavLink
+              to="/dashboard"
+              className={({ isActive }) => 
+                `py-3 rounded text-left px-4 transition-colors duration-200 ${
+                  isActive ? 'bg-[#C54F1E]' : 'bg-[#13698D] hover:bg-[#C54F1E]'
+                }`
+              }
+            >
+              Tableaux de Bord
+            </NavLink>
+
+            <NavLink
+              to="/transactions"
+              className={({ isActive }) => 
+                `py-3 rounded text-left px-4 transition-colors duration-200 ${
+                  isActive ? 'bg-[#C54F1E]' : 'bg-[#13698D] hover:bg-[#C54F1E]'
+                }`
+              }
+            >
+              Transactions
+            </NavLink>
+
+            <NavLink
+              to="/financial-stats"
+              className={({ isActive }) => 
+                `py-3 rounded text-left px-4 transition-colors duration-200 ${
+                  isActive ? 'bg-[#C54F1E]' : 'bg-[#13698D] hover:bg-[#C54F1E]'
+                }`
+              }
+            >
+              Statistiques Financières
+            </NavLink>
+
+            <NavLink
+              to="/settings"
+              className={({ isActive }) => 
+                `py-3 rounded text-left px-4 transition-colors duration-200 ${
+                  isActive ? 'bg-[#C54F1E]' : 'bg-[#13698D] hover:bg-[#C54F1E]'
+                }`
+              }
+            >
+              Paramètres
+            </NavLink>
+          </nav>
+        </div>
+        <button className="bg-[#13698D] hover:bg-[#C54F1E] py-3 m-4 rounded px-4">Déconnexion</button>
       </div>
-    </nav>
   );
 };
 

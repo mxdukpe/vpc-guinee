@@ -8,6 +8,10 @@ import Home from './views/Home';
 import PaymentsTools from './views/PaymentsTools';
 import StatTriangle from './views/StatTriangle';
 import SQLRemportation from './views/StatNumPortiere';
+import Dashboard from './screens/Dashboard';
+import Transactions from './screens/Transactions';
+import FinancialStats from './screens/FinancialStats';
+import Settings from './screens/Settings';
 
 import './App.css';
 
@@ -23,6 +27,10 @@ function App() {
             <Route path="/payments-tools" element={<PaymentsTools />} />
             <Route path="/stattriangle" element={<StatTriangle />} />
             <Route path="/statnum" element={<SQLRemportation />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/transactions" element={<Transactions />} />
+            <Route path="/financial-stats" element={<FinancialStats />} />
+            <Route path="/settings" element={<Settings />} />
             {/* Route par défaut */}
             <Route path="/" element={<LoginForm />} />
           </Routes>
